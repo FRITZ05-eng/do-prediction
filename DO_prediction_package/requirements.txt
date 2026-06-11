@@ -5,6 +5,6 @@ scikit-learn
 joblib
 matplotlib
 seaborn
-tensorflow-cpu
+tensorflow-cpu==2.15.0
 streamlit-option-menu
 Pillow
