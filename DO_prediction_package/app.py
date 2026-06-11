@@ -41,11 +41,13 @@ except Exception:
 # CONSTANTS & PATHS
 # =============================================================================
 
-MODELS_DIR   = "models"
-DATA_PATH    = "cleaned_dataset.csv"
-METRICS_PATH = "model_metrics.csv"
-BANNER_PATH  = "taal_banner.jpg"
-LOGO_PATH    = "taal logo.png"
+import os
+BASE_DIR     = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR   = os.path.join(BASE_DIR, "models")
+DATA_PATH    = os.path.join(BASE_DIR, "cleaned_dataset.csv")
+METRICS_PATH = os.path.join(BASE_DIR, "model_metrics.csv")
+BANNER_PATH  = os.path.join(BASE_DIR, "taal_banner.jpg")
+LOGO_PATH    = os.path.join(BASE_DIR, "taal logo.png")
 
 
 FEATURES = ["Water_Temperature", "pH", "Ammonia", "Nitrate", "Phosphate"]
