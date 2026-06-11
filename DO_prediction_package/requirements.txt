@@ -5,6 +5,5 @@ scikit-learn
 joblib
 matplotlib
 seaborn
-tensorflow-cpu
 streamlit-option-menu
 Pillow

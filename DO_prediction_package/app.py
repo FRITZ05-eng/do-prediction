@@ -14,10 +14,6 @@ from PIL import Image as _PIL_Image
 
 
 
-DRIVE_FOLDER = "/content/drive/MyDrive/DO_prediction_APP"
-if os.path.exists(DRIVE_FOLDER):
-    os.chdir(DRIVE_FOLDER)
-
 
 try:
     from streamlit_option_menu import option_menu
@@ -41,11 +37,27 @@ except Exception:
 # CONSTANTS & PATHS
 # =============================================================================
 
-MODELS_DIR   = "models"
-DATA_PATH    = "cleaned_dataset.csv"
-METRICS_PATH = "model_metrics.csv"
-BANNER_PATH  = "taal_banner.jpg"
-LOGO_PATH    = "taal logo.png"
+# =============================================================================
+# CONSTANTS & PATHS
+# =============================================================================
+
+import os
+from pathlib import Path
+
+# Use Path for more reliable path resolution
+BASE_DIR   = Path(__file__).parent.absolute()
+MODELS_DIR = BASE_DIR / "models"
+DATA_PATH    = BASE_DIR / "cleaned_dataset.csv"
+METRICS_PATH = BASE_DIR / "model_metrics.csv"
+BANNER_PATH  = BASE_DIR / "taal_banner.jpg"
+LOGO_PATH    = BASE_DIR / "taal_logo.png"
+
+# Convert to strings where os.path.join is used
+MODELS_DIR   = str(MODELS_DIR)
+DATA_PATH    = str(DATA_PATH)
+METRICS_PATH = str(METRICS_PATH)
+BANNER_PATH  = str(BANNER_PATH)
+LOGO_PATH    = str(LOGO_PATH)
 
 
 FEATURES = ["Water_Temperature", "pH", "Ammonia", "Nitrate", "Phosphate"]
